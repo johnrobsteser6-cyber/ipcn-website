@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indigenous Peoples of Cordillera Nation (IPCN) — Sovereignty, Modernity & Heritage</title>
+<meta name="description" content="IPCN unites the indigenous communities of the Cordillera Administrative Region and Contiguous Areas. Integrating ancestral domain preservation, self-governance, and cultural legacy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- FontAwesome for modern interface icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary-color: #1b4332; /* Forest Green */
+  --primary-light: #2d6a4f;
+  --secondary-color: #b6862c; /* Copper Gold */
+  --secondary-glow: rgba(182, 134, 44, 0.15);
+  --dark-bg: #090d0b; /* Pitch deep organic black */
+  --card-bg: rgba(22, 33, 27, 0.7); /* Translucent dark green */
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --text-primary: #f4f6f5;
+  --text-secondary: #c2cbd1;
+  --text-muted: #8b9991;
+  --red: #a3382f;
+  
+  --display-font: "Fraunces", serif;
+  --body-font: "Inter", sans-serif;
+  --mono-font: "IBM Plex Mono", monospace;
+  
+  --maxw: 1200px;
+  --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--dark-bg);
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-primary);
+  background-color: var(--dark-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Typographical elements */
+h1, h2, h3, h4 {
+  font-family: var(--display-font);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.eyebrow {
+  font-family: var(--mono-font);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--secondary-color);
+}
+
+.btn {
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 14.5px;
+  letter-spacing: 0.02em;
+  padding: 14px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--secondary-color);
+  color: #fff;
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--secondary-color);
+  box-shadow: 0 0 16px var(--secondary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* ========== Navigation Header ========== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  background: rgba(9, 13, 11, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+header.scrolled {
+  background: rgba(9, 13, 11, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-glass);
+  transition: transform 0.5s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: rotate(15deg) scale(1.05);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-text strong {
+  font-family: var(--display-font);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.brand-text span {
+  font-family: var(--mono-font);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+}
+
+nav.links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav.links a {
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+nav.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+nav.links a:hover {
+  color: var(--text-primary);
+}
+
+nav.links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 2px;
+  background: var(--text-primary);
+  display: block;
+  transition: var(--transition);
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 20%, rgba(45, 106, 79, 0.15) 0%, rgba(9, 13, 11, 0.4) 100%);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 60%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.75;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5.5vw, 68px);
+  line-height: 1.1;
+  margin: 16px 0 24px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ========== Vision / Mission ========== */
+.vm-section {
+  padding: 80px 0;
+  background: linear-gradient(to bottom, var(--dark-bg), #0f1612);
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.vm-card {
+  padding: 44px;
+  border-radius: 12px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.vm-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--secondary-color);
+}
+
+.vm-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(182, 134, 44, 0.3);
+}
+
+.vm-card h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.vm-card p {
+  font-size: 17.5px;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ========== Section Standards ========== */
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section-header {
+  max-width: 800px;
+  margin-bottom: 72px;
+}
+
+.section-header h2 {
+  font-size: clamp(32px, 4.5vw, 48px);
+  margin-top: 12px;
+  line-height: 1.15;
+}
+
+.section-header .lede {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  font-weight: 300;
+}
+
+/* ========== Feature Highlight Blocks (Split) ========== */
+.feature-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 72px;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.feature-split:nth-child(even) {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.feature-split:nth-child(even) .feature-text {
+  order: 2;
+}
+
+.feature-split:nth-child(even) .feature-image {
+  order: 1;
+}
+
+.feature-text h3 {
+  font-size: 34px;
+  margin: 14px 0 20px;
+  line-height: 1.2;
+}
+
+.feature-text p {
+  color: var(--text-secondary);
+  font-size: 16.5px;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.feature-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.feature-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.feature-image:hover img {
+  transform: scale(1.04);
+}
+
+/* ========== Symbols Section (Logo & Flag) ========== */
+.symbols-section {
+  background: linear-gradient(to bottom, #0f1612, var(--dark-bg));
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  padding: 100px 0;
+}
+
+.symbols-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.symbol-box {
+  padding: 44px;
+  border-radius: 12px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.symbol-box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.symbol-preview {
+  margin: 24px auto 32px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  max-width: 320px;
+}
+
+.symbol-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-preview {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.logo-preview img {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.symbol-box h3 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.symbol-box p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 300;
+  text-align: left;
+}
+
+/* ========== Interactive Quick Facts / Stats ========== */
+.stats-band {
+  background: linear-gradient(135deg, #0e1b15 0%, #070b09 100%);
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stat-num {
+  font-family: var(--display-font);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  line-height: 1;
+}
+
+.stat-label {
+  margin-top: 12px;
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ========== People & Culture Cards ========== */
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.culture-card {
+  padding: 40px 32px;
+  border-radius: 12px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.culture-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
+}
+
+.culture-card .icon-pattern {
+  width: 44px;
+  height: 16px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.culture-card h3 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.culture-card .region {
+  font-family: var(--mono-font);
+  font-size: 11px;
+  color: var(--secondary-color);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.culture-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ========== Custom List Style for Provinces ========== */
+.provinces-box {
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.provinces-list {
+  list-style: none;
+}
+
+.provinces-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.provinces-list li:last-child {
+  border-bottom: none;
+}
+
+.provinces-list .prov-name {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.provinces-list .prov-desc {
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ========== Governance System Styles ========== */
+.gov-structure {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 64px;
+}
+
+.gov-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.gov-card {
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.gov-card-title {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.gov-card-title h4 {
+  font-size: 20px;
+}
+
+.gov-card-title .tag {
+  font-family: var(--mono-font);
+  font-size: 11px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.gov-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.gov-sidebar {
+  padding: 44px;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.gov-sidebar h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.gov-sidebar p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+.gov-sidebar-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.gov-sidebar-list li {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  padding-left: 28px;
+  position: relative;
+  font-weight: 300;
+}
+
+.gov-sidebar-list li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--secondary-color);
+  font-size: 11px;
+}
+
+/* ========== Timeline Style ========== */
+.timeline {
+  position: relative;
+  padding-left: 4px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 140px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 48px;
+  padding: 36px 0;
+  position: relative;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 135px;
+  top: 42px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  border: 3px solid var(--dark-bg);
+  box-shadow: 0 0 10px rgba(182, 134, 44, 0.6);
+  z-index: 2;
+}
+
+.timeline-year {
+  font-family: var(--mono-font);
+  font-size: 14px;
+  color: var(--secondary-color);
+  font-weight: 600;
+  padding-top: 4px;
+  text-align: right;
+}
+
+.timeline-body h4 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.timeline-body p {
+  font-size: 15.5px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 72ch;
+}
+
+/* ========== Contact section ========== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+
+.contact-info h3 {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+  font-size: 16.5px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.contact-card {
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.contact-field {
+  margin-bottom: 24px;
+}
+
+.contact-field:last-child {
+  margin-bottom: 0;
+}
+
+.contact-label {
+  font-family: var(--mono-font);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--secondary-color);
+  margin-bottom: 8px;
+}
+
+.contact-value {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.contact-value address {
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.contact-value a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--secondary-color);
+  transition: var(--transition);
+}
+
+.contact-value a:hover {
+  color: var(--secondary-color);
+  border-color: transparent;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 400px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: 0;
+  filter: grayscale(0.5) sepia(0.2) invert(0.9) hue-rotate(120deg);
+}
+
+/* ========== Footer Section ========== */
+footer {
+  background: #050706;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 80px 0 44px;
+  color: var(--text-muted);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-brand img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-glass);
+}
+
+.footer-brand strong {
+  font-family: var(--display-font);
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-nav a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 36px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ========== Scroll Reveal / Animation System ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Weave Motif Divider ========== */
+.weave-container {
+  width: 100%;
+  height: 32px;
+  overflow: hidden;
+}
+
+/* ========== Responsive Styles ========== */
+@media (max-width: 1024px) {
+  .feature-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 80px;
+  }
+  .feature-split:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  .feature-split:nth-child(even) .feature-text {
+    order: 1;
+  }
+  .feature-split:nth-child(even) .feature-image {
+    order: 2;
+  }
+  .feature-image img {
+    height: 400px;
+  }
+  .symbols-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+  .gov-structure {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .culture-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  nav.links {
+    position: fixed;
+    inset: 80px 0 0 0;
+    background: var(--dark-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 24px;
+    gap: 24px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 999;
+  }
+  nav.links.open {
+    transform: translateX(0);
+  }
+  nav.links a {
+    font-size: 20px;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .nav-cta .btn {
+    display: none;
+  }
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 140px;
+  }
+  .hero-bg {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 350px;
+    opacity: 0.85;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    margin-top: 40px;
+  }
+  .vm-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline::before {
+    left: 60px;
+  }
+  .timeline-item {
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+  }
+  .timeline-item::after {
+    left: 55px;
+  }
+  .timeline-year {
+    text-align: left;
+    font-size: 13px;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-item::after {
+    display: none !important;
+  }
+  .culture-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVIGATION HEADER ================= -->
+<header id="navHeader">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#home" class="brand">
+        <img src="ipcn_logo.png" alt="IPCN Logo" class="brand-logo">
+        <span class="brand-text"><strong>IPCN</strong><span>Cordillera Nation</span></span>
+      </a>
+      <nav class="links" id="navLinks">
+        <a href="#about">Sovereign Domain</a>
+        <a href="#symbols">Official Symbols</a>
+        <a href="#vision-mission">Vision &amp; Mission</a>
+        <a href="#peoples">Peoples &amp; Culture</a>
+        <a href="#governance">Self-Governance</a>
+        <a href="#history">Legacy Timeline</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px;"><i class="fa-solid fa-location-dot"></i> Visit Office</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <p class="eyebrow">Kaigorotan · Sovereign Indigenous Nation</p>
+      <h1>Communal Ancestry.<br>Modern Sovereignty.<br><em>A self-governing home.</em></h1>
+      <p class="hero-sub">The Indigenous Peoples of Cordillera Nation (IPCN) unites the highland communities and contiguous territories under a collective vision of self-rule. We blend ancestral forest stewardship and traditional assemblies with modern development goals.</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary">Who We Are <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#symbols" class="btn btn-secondary">Official Symbols</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bg">
+    <img src="cordillera_hero_banner.png" alt="Majestic sunrise over Cordillera mountain ranges and terraced agricultural architecture">
+  </div>
+</section>
+
+<!-- ================= VISION & MISSION ================= -->
+<section class="vm-section" id="vision-mission">
+  <div class="container">
+    <div class="vm-grid">
+      <div class="vm-card glass reveal">
+        <p class="eyebrow">The Sovereign Vision</p>
+        <h3>Culturally-Imbued Autonomy</h3>
+        <p>"The Indigenous Peoples of Cordillera Nation envisions a culturally-imbued, self-governing, and self-sustaining integrated development of the ancestral domain that harmoniously coexists with the Republic of the Philippines."</p>
+      </div>
+      <div class="vm-card glass reveal">
+        <p class="eyebrow">Our Mission</p>
+        <h3>Sustainable Preservation</h3>
+        <p>"To protect and promote cultural heritage, strengthen ancestral self-governance, and pursue integrated sustainable development of the domain that harmoniously coexists with the Republic of the Philippines."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOVEREIGN DOMAIN (ABOUT) ================= -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Ancestral Sovereignty</p>
+      <h2>An ancient domain older than the state that surrounds it.</h2>
+      <p class="lede">Long before lowland colonial systems mapped the highlands, the communities of the Cordillera Central range sustained their lands through strict customary borders, peace treaties, and collective councils.</p>
+    </div>
+    
+    <div class="feature-split">
+      <div class="feature-text reveal">
+        <h3>Pre-colonial continuity in the modern era</h3>
+        <p>The Cordillera mountain spine is not just a geographic structure, but an active socio-political space. Unconquered through three centuries of Spanish colonization, our institutions represent an unbroken connection to ancestral land governance.</p>
+        <p>IPCN serves as a modern governance interface, protecting the collective territorial rights of Cordillera nations. We verify boundary demarcations, implement communal land management policies, and coordinate local development efforts across all seven provinces and contiguous areas.</p>
+        <p>By registering domains and securing Free, Prior and Informed Consent (FPIC), we establish a modern operational framework that respects our elders' councils while enforcing constitutional rights under the Indigenous Peoples' Rights Act.</p>
+      </div>
+      <div class="feature-image reveal">
+        <img src="ipcn_continuity.png" alt="Collaborative meeting between Cordilleran elders and community leaders studying regional maps inside a modern pine architecture council room">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFICIAL SYMBOLS SECTION ================= -->
+<section id="symbols" class="symbols-section glass-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">IPCN State Symbols</p>
+      <h2>The Official Seal &amp; Flag of the Sovereign Nation.</h2>
+      <p class="lede">Adopted in 2024, these official symbols represent the unity, ecological heritage, continuous custom, and future trajectory of the Indigenous Peoples of Cordillera Nation.</p>
+    </div>
+    
+    <div class="symbols-grid">
+      <div class="symbol-box glass reveal">
+        <p class="eyebrow">Official Emblem</p>
+        <h3>The Circular Seal of IPCN</h3>
+        <div class="symbol-preview logo-preview">
+          <img src="ipcn_logo.png" alt="IPCN Circular Seal showing the mountain valley, bridge, two hands reaching out, seven stars and green geometric borders">
+        </div>
+        <p>The circular seal represents the completeness of the ancestral domain. The green geometric border displays traditional Cordilleran weave patterns representing culture. The mountain valley and suspension footbridge highlight the natural highland environment we defend. The two hands in the center represent the creation of autonomy and peaceful unity among the tribes. The seven stars along the bottom symbolize the six provinces of the Cordillera and the Contiguous Areas established since 2024, with the final label cleanly integrated in gold and black in the bottom center.</p>
+      </div>
+      
+      <div class="symbol-box glass reveal">
+        <p class="eyebrow">National Banner</p>
+        <h3>The Official IPCN Flag</h3>
+        <div class="symbol-preview">
+          <img src="ipcn_flag.png" alt="IPCN Official Flag showing a blue octagon with a shooting star on a cream-yellow background surrounded by seven red stars">
+        </div>
+        <p>The IPCN flag features a warm yellow-cream background symbolizing peace and rich agricultural land. The central blue octagon represents structural stability and clarity of governance. Inside, the glowing comet/shooting star with a dust trail symbolizes a guided path toward future progress and enlightenment. The octagon is surrounded by seven red stars representing the collective strengths and sovereignty of the six highland provinces plus the Contiguous Area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS BAND ================= -->
+<section class="stats-band">
+  <div class="container reveal">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Sovereign Provinces &amp; Areas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">75</div>
+        <div class="stat-label">Municipalities Linked</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1,178</div>
+        <div class="stat-label">Barangays &amp; Ili Communities</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Customary Self-Governance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PEOPLES & CULTURE ================= -->
+<section id="peoples">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Peoples &amp; Culture</p>
+      <h2>Kaigorotan — many peoples, one range.</h2>
+      <p class="lede">We are distinct societies with unique languages, weaving traditions, and customary laws, united by our shared geography, kinship, and historical defense of our domain.</p>
+    </div>
+    
+    <div class="culture-grid reveal">
+      <div class="culture-card glass">
+        <svg class="icon-pattern" viewBox="0 0 30 12"><polyline points="0,12 5,0 10,12 15,0 20,12 25,0 30,12" fill="none" stroke="#b6862c" stroke-width="2"/></svg>
+        <h3>Ibaloy</h3>
+        <span class="region">Benguet</span>
+        <p>Agrarian leaders of southern Benguet. Known for gold-working heritage, cattle raising, and intricate oral epics describing centuries of terrace farming.</p>
+      </div>
+      <div class="culture-card glass">
+        <svg class="icon-pattern" viewBox="0 0 30 12"><polyline points="0,12 5,0 10,12 15,0 20,12 25,0 30,12" fill="none" stroke="#a3382f" stroke-width="2"/></svg>
+        <h3>Kankanaey</h3>
+        <span class="region">Benguet · Mt. Province</span>
+        <p>Builders of the dap-ay council systems. Famous for advanced backstrap loom weaving and deep expertise in highland terrace construction.</p>
+      </div>
+      <div class="culture-card glass">
+        <svg class="icon-pattern" viewBox="0 0 30 12"><polyline points="0,12 5,0 10,12 15,0 20,12 25,0 30,12" fill="none" stroke="#2d6a4f" stroke-width="2"/></svg>
+        <h3>Bontoc</h3>
+        <span class="region">Mountain Province</span>
+        <p>Governors of Chico River villages. Organized through ator houses and historically renowned for resisting aggressive mining and logging exploitation.</p>
+      </div>
+      <div class="culture-card glass">
+        <svg class="icon-pattern" viewBox="0 0 30 12"><polyline points="0,12 5,0 10,12 15,0 20,12 25,0 30,12" fill="none" stroke="#b6862c" stroke-width="2"/></svg>
+        <h3>Ifugao</h3>
+        <span class="region">Ifugao</span>
+        <p>Architects of the UNESCO rice terrace systems. Pioneered the muyong agro-forestry network, widely cited as a model for modern ecological preservation.</p>
+      </div>
+      <div class="culture-card glass">
+        <svg class="icon-pattern" viewBox="0 0 30 12"><polyline points="0,12 5,0 10,12 15,0 20,12 25,0 30,12" fill="none" stroke="#a3382f" stroke-width="2"/></svg>
+        <h3>Kalinga</h3>
+        <span class="region">Kalinga</span>
+        <p>Keepers of the bodong peace treaty protocol. Turned age-old diplomatic structures into region-wide alliances to protect mountain corridors.</p>
+      </div>
+      <div class="culture-card glass">
+        <svg class="icon-pattern" viewBox="0 0 30 12"><polyline points="0,12 5,0 10,12 15,0 20,12 25,0 30,12" fill="none" stroke="#2d6a4f" stroke-width="2"/></svg>
+        <h3>Isneg (Apayao)</h3>
+        <span class="region">Apayao</span>
+        <p>Inhabitants of the Apayao-Abulog river corridors. Practicing swidden agriculture and riverine fishing in houses styled after boat shapes.</p>
+      </div>
+    </div>
+    
+    <div class="provinces-box glass reveal" style="margin-top: 48px;">
+      <h3 style="margin-bottom: 24px; font-size: 24px;">Administrative Structure &amp; Provincial Seats</h3>
+      <ul class="provinces-list">
+        <li><span class="prov-name">Abra</span><span class="prov-desc">IPCN Secretariat Location · Peñarrubia</span></li>
+        <li><span class="prov-name">Apayao</span><span class="prov-desc">Isneg Homeland · Kabugao &amp; Luna</span></li>
+        <li><span class="prov-name">Benguet</span><span class="prov-desc">Ibaloy &amp; Kankanaey Mining Hub · La Trinidad</span></li>
+        <li><span class="prov-name">Ifugao</span><span class="prov-desc">World Heritage Terraces · Lagawe</span></li>
+        <li><span class="prov-name">Kalinga</span><span class="prov-desc">Bodong Pact Center · Tabuk City</span></li>
+        <li><span class="prov-name">Mountain Province</span><span class="prov-desc">Bontoc &amp; Kankanaey Councils · Bontoc</span></li>
+        <li><span class="prov-name">Contiguous Area</span><span class="prov-desc">Neighboring Communities in Ilocos &amp; Cagayan Valley</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUSTOMARY SELF-GOVERNANCE ================= -->
+<section id="governance" class="glass-light" style="background: rgba(22, 33, 27, 0.2);">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Self-Governance</p>
+      <h2>Traditional systems meeting legal frameworks.</h2>
+      <p class="lede">Self-rule is defined by functional institutions. We bridge customary law with modern national policies to establish secure autonomy.</p>
+    </div>
+    
+    <div class="gov-structure">
+      <div class="gov-cards reveal">
+        <div class="gov-card glass">
+          <div class="gov-card-title">
+            <h4>Dap-ay / Ator Assembly</h4>
+            <span class="tag">Municipal Councils</span>
+          </div>
+          <p>Local community houses where elders resolve property disputes, plan agricultural cycles, and enforce customary justice. They form the foundational layer of IPCN's collective assembly.</p>
+        </div>
+        <div class="gov-card glass">
+          <div class="gov-card-title">
+            <h4>Bodong Peace Pacts</h4>
+            <span class="tag">Inter-tribal Treaties</span>
+          </div>
+          <p>Bilateral treaties between tribal regions that regulate borders, resolve conflicts, and permit trade routes. This system acts as a decentralized diplomatic network across the mountain range.</p>
+        </div>
+        <div class="gov-card glass">
+          <div class="gov-card-title">
+            <h4>Muyong, Lapat &amp; Batangan</h4>
+            <span class="tag">Ecological Stewardship</span>
+          </div>
+          <p>Traditional community-enforced forest preservation zones. Logging and harvesting are strictly regulated to preserve local water tables and prevent watershed soil erosion.</p>
+        </div>
+      </div>
+      
+      <div class="gov-sidebar glass reveal">
+        <h3>Custom meets Constitutional Law</h3>
+        <p>The Indigenous Peoples' Rights Act of 1997 (Republic Act No. 8371) provides the legal recognition for customary systems within the Philippine Republic:</p>
+        <ul class="gov-sidebar-list">
+          <li><strong>CADT Titles:</strong> Legal recognition of ancestral domain borders verified by geodetic surveyors.</li>
+          <li><strong>FPIC Consent:</strong> Veto power over external commercial infrastructure or resource extraction.</li>
+          <li><strong>Customary Justice:</strong> Local dispute resolution by elders recognized in courts.</li>
+          <li><strong>Administrative Integration:</strong> Linking traditional councils directly to municipal and provincial local government units.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEGACY TIMELINE ================= -->
+<section id="history">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">History &amp; Resistance</p>
+      <h2>A legacy of defending our ancestral highlands.</h2>
+      <p class="lede">Our autonomy was not gifted; it was fought for and defended. The IPCN documents this historical path of preservation and resistance.</p>
+    </div>
+    
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-year">1500s–1800s</div>
+        <div class="timeline-body">
+          <h4>Three centuries of highland independence</h4>
+          <p>While Spanish colonial forces governed the lowlands, the Cordillera mountain communities maintained independence through defensive combat and organized council networks.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1970s</div>
+        <div class="timeline-body">
+          <h4>The Chico River and Cellophil resistance</h4>
+          <p>Highland communities organized to block the Chico River Hydroelectric Dam and Marcos-era timber concessions in Abra (Cellophil Resources), protecting ancestral lands and sacred burial sites.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Apr 24, 1980</div>
+        <div class="timeline-body">
+          <h4>Martyrdom of Macli-ing Dulag</h4>
+          <p>Kalinga Pangat (chieftain) Macli-ing Dulag was assassinated for leading the opposition against the Chico Dam, unifying the entire region and stopping the dam's implementation.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1987</div>
+        <div class="timeline-body">
+          <h4>Creation of the interim CAR</h4>
+          <p>Executive Order 220 established the Cordillera Administrative Region as an interim structure to prepare the area for full regional autonomy.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1997</div>
+        <div class="timeline-body">
+          <h4>Passage of IPRA (RA 8371)</h4>
+          <p>The landmark Indigenous Peoples' Rights Act recognized ancestral domain land titles, giving customary self-governance a formal legal standing.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Present Day</div>
+        <div class="timeline-body">
+          <h4>Modernization and Autonomy</h4>
+          <p>From the secretariat in Peñarrubia, IPCN drives education, smart mapping alignment, and local council coordination, working toward a fully self-reliant Cordillera.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT & OFFICE ================= -->
+<section id="contact" class="glass-light" style="background: rgba(22, 33, 27, 0.4);">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <p class="eyebrow">Contact &amp; Administration</p>
+        <h3>Visit the IPCN Secretariat.</h3>
+        <p>Our central office is located in the province of Abra, serving as the operations base for geodetic coordination, educational outreach, and council records.</p>
+        
+        <div class="contact-card glass">
+          <div class="contact-field">
+            <div class="contact-label">HQ Address</div>
+            <div class="contact-value">
+              <address>
+                Sitio Prancia, Poblacion<br>
+                Peñarrubia, Abra<br>
+                Cordillera Administrative Region, PH
+              </address>
+            </div>
+          </div>
+          <div class="contact-field">
+            <div class="contact-label">Email Address</div>
+            <div class="contact-value">
+              <a href="mailto:ipcnipcn21@gmail.com">ipcnipcn21@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="map-container glass reveal">
+        <iframe
+          src="https://www.google.com/maps?q=Pe%C3%B1arrubia%2C%20Abra%2C%20Philippines&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google map displaying the general location of Peñarrubia, Abra, Philippines">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="ipcn_logo.png" alt="IPCN Logo">
+        <strong>Indigenous Peoples of Cordillera Nation</strong>
+      </div>
+      <nav class="footer-nav">
+        <a href="#about">Sovereign Domain</a>
+        <a href="#symbols">Official Symbols</a>
+        <a href="#vision-mission">Vision &amp; Mission</a>
+        <a href="#peoples">Culture</a>
+        <a href="#governance">Governance</a>
+        <a href="#history">Timeline</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p style="margin-bottom: 12px;">HQ Location: Sitio Prancia, Poblacion, Peñarrubia, Abra, Cordillera Administrative Region, Philippines. Coordination focal point for tribal councils, community surveys, and ancestral domain protection policies.</p>
+      <p>© 2024 Indigenous Peoples of Cordillera Nation. All rights reserved. Registered under standard Indigenous Governance structures.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal setup
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.15,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Sticky Navigation styling
+const headerEl = document.getElementById('navHeader');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    headerEl.classList.add('scrolled');
+  } else {
+    headerEl.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  const isExpanded = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', isExpanded);
+  
+  // Animate menu icon lines
+  if (isExpanded) {
+    menuToggle.children[0].style.transform = 'translateY(8px) rotate(45deg)';
+    menuToggle.children[1].style.opacity = '0';
+    menuToggle.children[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+  } else {
+    menuToggle.children[0].style.transform = 'none';
+    menuToggle.children[1].style.opacity = '1';
+    menuToggle.children[2].style.transform = 'none';
+  }
+});
+
+// Close mobile menu on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.children[0].style.transform = 'none';
+    menuToggle.children[1].style.opacity = '1';
+    menuToggle.children[2].style.transform = 'none';
+  });
+});
+</script>
+
+</body>
+</html>
