@@ -1914,6 +1914,12 @@ footer {
 </footer>
 
 <script>
+// Clean social media tracking queries (like fbclid) from URL
+if (window.location.search.includes('fbclid=')) {
+  const cleanUrl = window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.hash;
+  window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+}
+
 // Scroll reveal setup
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
