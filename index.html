@@ -293,6 +293,87 @@ nav.links a:hover::after {
   background: radial-gradient(circle at 80% 20%, rgba(45, 106, 79, 0.15) 0%, rgba(9, 13, 11, 0.4) 100%);
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+
+.hero-image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.hero-portrait-card {
+  position: relative;
+  background: rgba(22, 33, 27, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+              0 0 40px rgba(182, 134, 44, 0.05);
+  max-width: 380px;
+  width: 100%;
+  transition: var(--transition);
+  transform: rotateY(-5deg) rotateX(5deg);
+  transform-style: preserve-3d;
+}
+
+.hero-portrait-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(182,134,44,0.4) 50%, rgba(27,67,50,0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hero-portrait-card:hover {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-8px);
+  border-color: rgba(182, 134, 44, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
+              0 0 50px rgba(182, 134, 44, 0.15);
+}
+
+.hero-portrait-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.hero-portrait-caption {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.hero-portrait-caption strong {
+  color: var(--secondary-color);
+  font-family: var(--display-font);
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
 .hero-bg {
   position: absolute;
   top: 0;
@@ -300,7 +381,7 @@ nav.links a:hover::after {
   width: 60%;
   height: 100%;
   z-index: 1;
-  opacity: 0.75;
+  opacity: 0.35;
   mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
   -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
 }
@@ -315,7 +396,7 @@ nav.links a:hover::after {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 650px;
+  max-width: 100%;
 }
 
 .hero h1 {
@@ -973,6 +1054,25 @@ footer {
 
 /* ========== Responsive Styles ========== */
 @media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .hero-image-col {
+    order: 2;
+  }
+  .hero-content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
   .feature-split {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1120,13 +1220,23 @@ footer {
 <!-- ================= HERO SECTION ================= -->
 <section class="hero" id="home">
   <div class="container">
-    <div class="hero-content">
-      <p class="eyebrow">Kaigorotan · Sovereign Indigenous Nation</p>
-      <h1>Communal Ancestry.<br>Modern Sovereignty.<br><em>A self-governing home.</em></h1>
-      <p class="hero-sub">The Indigenous Peoples of Cordillera Nation (IPCN) unites the highland communities and contiguous territories under a collective vision of self-rule. We blend ancestral forest stewardship and traditional assemblies with modern development goals.</p>
-      <div class="hero-actions">
-        <a href="#about" class="btn btn-primary">Who We Are <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#symbols" class="btn btn-secondary">Official Symbols</a>
+    <div class="hero-grid">
+      <div class="hero-image-col">
+        <div class="hero-portrait-card">
+          <img src="Supreme_Pangat_Molina.jpg" alt="Supreme Pangat Condaya Mailed Molina and Mrs. Molina">
+          <div class="hero-portrait-caption">
+            <strong>Supreme Pangat Condaya Mailed Molina</strong><br>and Mrs. Molina
+          </div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Kaigorotan · Sovereign Indigenous Nation</p>
+        <h1>Communal Ancestry.<br>Modern Sovereignty.<br><em>A self-governing home.</em></h1>
+        <p class="hero-sub">The Indigenous Peoples of Cordillera Nation (IPCN) unites the highland communities and contiguous territories under a collective vision of self-rule. We blend ancestral forest stewardship and traditional assemblies with modern development goals.</p>
+        <div class="hero-actions">
+          <a href="#about" class="btn btn-primary">Who We Are <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#symbols" class="btn btn-secondary">Official Symbols</a>
+        </div>
       </div>
     </div>
   </div>
